@@ -6,6 +6,9 @@ class MakersBnB < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  get '/' do
+    "Welcome to MakersBNB. Feel at home, anywhere"
+  end
 
   run! if app_file == $0
 end
