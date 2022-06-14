@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/spaces'
 
 class MakersBnB < Sinatra::Base
   configure :development do
@@ -11,7 +12,8 @@ class MakersBnB < Sinatra::Base
   end
  
   get '/spaces' do
-    spaces = ["Space_1", "Space_2", "Space_3"]
+    @spaces = Spaces.all
+    erb :spaces
   end
 
   run! if app_file == $0
