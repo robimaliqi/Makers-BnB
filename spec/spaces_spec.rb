@@ -1,11 +1,16 @@
 require 'spaces'
 
 RSpec.describe Spaces do
-  describe "the .create method" do
-    it "creates new instance of space" do
-      space_1 = Spaces.create("Space_1")
+  describe ".all method" do
+    it "returns all spaces" do
+      # space_1 = Spaces.create("Space_1")
+      # space_2 = Spaces.create("Space_2")
+      # space_3 = Spaces.create("Space_3")
+
       spaces = Spaces.all
-      expect(spaces).to include(space_1)
+
+      expect(spaces.first.name).to eq ("Space_1")
+      expect(spaces.last.name).to eq ("Space_3")
     end
   end
 end     
