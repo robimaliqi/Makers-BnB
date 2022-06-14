@@ -2,6 +2,9 @@
   <% @spaces.each do |space| %>
     <li class="spaces">
     <%= space %>
+    <form action="/spaces" method="post">
+      <input type="submit" value="Book">
+      </form>
     </li>
     <% end %>
 </ul>
