@@ -14,3 +14,7 @@ visit ('/)
 expect(page).to have_content "Welcome to MakersBNB"
 expect(page).to have_content "Feel at home, anywhere"
 
+click through to spaces page
+visit('/')
+click_button('View Spaces')
+expect(current_page).to be('/spaces')

@@ -1,8 +1,16 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/davekempsell/Projects/Makers-BnB/spec/Features/infrastructure_spec.rb": {
+      "/Users/davekempsell/Projects/Makers-BnB/spec/Features/homepage_spec.rb": {
         "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
           1,
           1,
           1,
@@ -13,6 +21,6 @@
         ]
       }
     },
-    "timestamp": 1655203295
+    "timestamp": 1655204040
   }
 }
