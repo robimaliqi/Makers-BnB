@@ -16,6 +16,11 @@ class MakersBnB < Sinatra::Base
     erb :spaces
   end
 
+  post '/spaces/:id' do
+    Spaces.book(id: params[:id])
+    redirect '/spaces'
+  end
+
   run! if app_file == $0
 end
 
