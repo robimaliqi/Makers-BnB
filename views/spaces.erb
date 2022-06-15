@@ -8,6 +8,7 @@
   <% @spaces.each do |space| %>
     <li class="spaces">
     <%= space.name %>
+    beautiful relaxing space 
     <form action="/spaces/<%= space.id %>" method="post">
       <input type="submit" value="Book">
       </form>
