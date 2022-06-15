@@ -22,6 +22,15 @@ class MakersBnB < Sinatra::Base
     redirect '/spaces'
   end
 
+  get '/spaces/new' do
+    erb :'spaces/new'
+  end
+
+  post '/spaces/new/create' do
+    Spaces.create(name: params[:name])
+    redirect '/spaces'
+  end
+
   run! if app_file == $0
 end
 
