@@ -2,15 +2,16 @@ require 'pg'
 require_relative 'database_connection'
 
 class Spaces
-  attr_reader :id, :name, :available
+  attr_reader :id, :name, :description, :available
 
-  def initialize( id:, name:, available:)
+  def initialize( id:, name:, description:, available:)
     @name = name
     @id = id
+    @description = description
     @available = available
   end 
 
-  def self.create(name:)
+  def self.create(name:, description:)
     result = DatabaseConnection.query(
       "INSERT INTO spaces (name) VALUES($1) RETURNING id, name, available;",
      [name]
@@ -18,6 +19,7 @@ class Spaces
       Spaces.new(
         id: result[0]['id'],
         name: result[0]['name'],
+        description: "beautiful relaxing space",
         available: result[0]['available']
       )
   end
@@ -36,6 +38,7 @@ class Spaces
       Spaces.new(
         id: space['id'],
         name: space['name'],
+        description: "beautiful relaxing space",
         available: space['available']
       )
     end

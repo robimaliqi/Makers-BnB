@@ -26,7 +26,7 @@ feature "Create listing page" do
     expect(page).to have_content("Space_2")
   end
 
-  scenario "user can aadd description to listing" do
+  scenario "user can add description to listing" do
     visit("/")
     click_button("View Spaces")
     click_button("List a Space")
