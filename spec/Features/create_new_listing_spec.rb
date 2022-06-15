@@ -1,5 +1,5 @@
 feature "Create listing page" do
-  xscenario "User can create a new listing" do
+  scenario "User can create a new listing" do
     visit("/")
     click_button("View Spaces")
     click_button("List a Space")
@@ -10,7 +10,7 @@ feature "Create listing page" do
     expect(page).to have_content("Space_1")
   end
 
-  xscenario "User can create multiple listings" do
+  scenario "User can create multiple listings" do
     visit("/")
     click_button("View Spaces")
     click_button("List a Space")

@@ -1,5 +1,10 @@
 # Makers-BnB
 
+# DATABASES
+- To run this program, please follow the below instructions:
+1. create two databases, makersbnb & makersbnb_test
+2. use code from migrations files within db folder
+
 # MVP
 
 visit homepage
