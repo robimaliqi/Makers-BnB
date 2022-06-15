@@ -11,6 +11,8 @@ class MakersBnB < Sinatra::Base
   get '/' do
     erb :index
   end
+
+ 
  
   get '/spaces' do
     @spaces = Spaces.all
