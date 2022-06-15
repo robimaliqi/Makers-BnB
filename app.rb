@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/spaces'
+require './database_connection_setup'
 
 class MakersBnB < Sinatra::Base
   configure :development do
@@ -14,6 +15,11 @@ class MakersBnB < Sinatra::Base
   get '/spaces' do
     @spaces = Spaces.all
     erb :spaces
+  end
+
+  post '/spaces/:id' do
+    Spaces.book(id: params[:id])
+    redirect '/spaces'
   end
 
   run! if app_file == $0
