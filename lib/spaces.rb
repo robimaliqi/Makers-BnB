@@ -1,4 +1,5 @@
 require 'pg'
+require_relative 'database_connection'
 
 class Spaces
   attr_reader :id, :name, :available
@@ -10,8 +11,7 @@ class Spaces
   end 
 
   def self.create(name:)
-    connection = PG.connect(dbname: 'makersbnb_test')
-    result = connection.exec_params(
+    result = DatabaseConnection.query(
       "INSERT INTO spaces (name) VALUES($1) RETURNING id, name, available;",
      [name]
     )
@@ -23,8 +23,7 @@ class Spaces
   end
 
   def self.book(id:)
-    connection = PG.connect(dbname: 'makersbnb_test')
-    spaces = connection.exec_params(
+    spaces = DatabaseConnection.query(
       "UPDATE spaces SET available=FALSE WHERE id=$1 
       RETURNING id, name, available;",
       [id]
@@ -32,8 +31,7 @@ class Spaces
   end
 
   def self.all
-    connection = PG.connect(dbname: 'makersbnb_test')
-    spaces = connection.exec_params("SELECT * FROM spaces WHERE available='t';")
+    spaces = DatabaseConnection.query("SELECT * FROM spaces WHERE available='t';")
     spaces.map do |space|
       Spaces.new(
         id: space['id'],
