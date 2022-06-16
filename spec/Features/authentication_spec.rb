@@ -31,7 +31,7 @@ feature 'authentication' do
     fill_in('password', with: "password123")
     click_button('Log in')
 
-    click_button('Log out')
+    click_link('Log out')
 
     expect(page).to have_content 'Welcome to MakersBnB'
   end
