@@ -5,6 +5,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     ansi (1.5.0)
     ast (2.4.2)
+    bcrypt (3.1.18)
     capybara (3.37.1)
       addressable
       matrix
@@ -86,6 +87,8 @@ GEM
       rack-protection (= 2.2.0)
       sinatra (= 2.2.0)
       tilt (~> 2.0)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
     sinatra-reloader (1.0)
       sinatra-contrib
     terminal-table (3.0.2)
@@ -101,6 +104,7 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
+  bcrypt
   capybara
   pg
   rspec
@@ -109,6 +113,7 @@ DEPENDENCIES
   simplecov-console
   sinatra
   sinatra-contrib
+  sinatra-flash
   sinatra-reloader
   webrick
 
