@@ -5,8 +5,12 @@ Feel at home, anywhere </h1>
   <input type="submit" value="View Spaces" />
 </form>
 
-<form action="/user" method="post">
-  <input type="email" name="email" />
-  <input type="password" name="password" />
+<form action='sessions/new' method='get'>
+  <input type="submit" value="Log in">
+</form>
+
+<form action="/user/new" method="post">
+  <input type="email" name="email" placeholder="email" />
+  <input type="password" name="password" placeholder="password"  />
   <input type="submit" value="Sign Up" />
 </form>

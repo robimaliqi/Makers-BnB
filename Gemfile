@@ -8,9 +8,11 @@ ruby '3.0.2'
 
 gem 'sinatra'
 gem 'sinatra-reloader'
+gem 'sinatra-flash'
 gem 'sinatra-contrib'
 gem 'webrick'
 gem 'pg'
+gem 'bcrypt'
 
 group :test do
   gem 'capybara'
