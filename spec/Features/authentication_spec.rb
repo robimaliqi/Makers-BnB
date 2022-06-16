@@ -2,10 +2,7 @@ require 'web_helper'
 
 feature 'authentication' do
   scenario 'a user can log in with a correct username and password' do
-    register_user
-    fill_in('email', with: 'example@example.com')
-    fill_in('password', with: "password123")
-    click_button('Log in')
+    register_and_login
 
     expect(current_path).to eq "/spaces"
   end
