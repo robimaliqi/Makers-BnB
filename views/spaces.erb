@@ -8,6 +8,8 @@
   <% @spaces.each do |space| %>
     <li class="spaces">
     <%= space.name %>
+    <%= space.description %>  
+    £<%= space.price %>
     <form action="/spaces/<%= space.id %>" method="post">
       <input type="submit" value="Book">
       </form>

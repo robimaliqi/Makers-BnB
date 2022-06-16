@@ -1,5 +1,10 @@
 # Makers-BnB
 
+# DATABASES
+- To run this program, please follow the below instructions:
+1. create two databases, makersbnb & makersbnb_test
+2. use code from migrations files within db folder
+
 # MVP
 
 visit homepage
@@ -18,3 +23,10 @@ click through to spaces page
 visit('/')
 click_button('View Spaces')
 expect(current_page).to be('/spaces')
+
+create new listing 
+- adding description 
+- click on "list a space" button 
+- fill in description form
+- click 'list my space button'
+- spaces page displays space with description 
