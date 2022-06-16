@@ -1,18 +1,20 @@
 <h1>Book a Space</h1>
 
 <form action="/spaces/new" method="get">
-  <input type="submit" value="List a Space"/>
+  <input type="submit" value="List a Space" />
 </form>
 
 <ul>
   <% @spaces.each do |space| %>
     <li class="spaces">
-    <%= space.name %>
-    <%= space.description %>  
-    £<%= space.price %>
-    <form action="/spaces/<%= space.id %>" method="post">
-      <input type="submit" value="Book">
-      </form>
+      <%= space.name %>
+        <%= space.description %>
+          £<%= space.price %>
+            <%= space.available_from %>
+              <%= space.available_to %>
+                <form action="/spaces/<%= space.id %>" method="post">
+                  <input type="submit" value="Book">
+                </form>
     </li>
     <% end %>
 </ul>

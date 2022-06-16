@@ -1,35 +1,39 @@
-require 'pg'
-require_relative 'database_connection'
+require "pg"
+require_relative "database_connection"
 
 class Spaces
-  attr_reader :id, :name, :description, :price, :available
+  attr_reader :id, :name, :description, :price, :available, :available_from, :available_to
 
-  def initialize( id:, name:, description:, price:, available:)
+  def initialize(id:, name:, description:, price:, available:, available_from:, available_to:)
     @name = name
     @id = id
     @description = description
     @price = price
     @available = available
-  end 
+    @available_from = available_from
+    @available_to = available_to
+  end
 
-  def self.create(name:, description:, price:)
+  def self.create(name:, description:, price:, available_from:, available_to:)
     result = DatabaseConnection.query(
-      "INSERT INTO spaces (name, description, price) VALUES($1, $2, $3) RETURNING id, name, description, price, available;",
-     [name, description, price.to_f]
+      "INSERT INTO spaces (name, description, price, available_from, available_to) VALUES($1, $2, $3, $4, $5) RETURNING id, name, description, price, available, available_from, available_to;",
+      [name, description, price.to_f, available_from, available_to]
     )
-      Spaces.new(
-        id: result[0]['id'],
-        name: result[0]['name'],
-        description: result[0]['description'],
-        price: result[0]['price'],
-        available: result[0]['available']
-      )
+    Spaces.new(
+      id: result[0]["id"],
+      name: result[0]["name"],
+      description: result[0]["description"],
+      price: result[0]["price"],
+      available: result[0]["available"],
+      available_from: result[0]["available_from"],
+      available_to: result[0]["available_to"],
+    )
   end
 
   def self.book(id:)
     spaces = DatabaseConnection.query(
       "UPDATE spaces SET available=FALSE WHERE id=$1 
-      RETURNING id, name, description, price, available;",
+      RETURNING id, name, description, price, available, available_from, available_to;",
       [id]
     )
   end
@@ -38,11 +42,13 @@ class Spaces
     spaces = DatabaseConnection.query("SELECT * FROM spaces WHERE available='t';")
     spaces.map do |space|
       Spaces.new(
-        id: space['id'],
-        name: space['name'],
-        description: space['description'],
-        price: space['price'],
-        available: space['available']
+        id: space["id"],
+        name: space["name"],
+        description: space["description"],
+        price: space["price"],
+        available: space["available"],
+        available_from: space["available_from"],
+        available_to: space["available_to"],
       )
     end
   end
