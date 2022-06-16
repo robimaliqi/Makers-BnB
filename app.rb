@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/spaces'
 require './database_connection_setup'
+require_relative 'lib/user'
 
 class MakersBnB < Sinatra::Base
   configure :development do
@@ -11,6 +12,15 @@ class MakersBnB < Sinatra::Base
   get '/' do
     erb :index
   end
+
+  post '/user' do
+    User.create(email: params[:email], password: params[:password])
+    redirect '/user/new'
+  end 
+
+  get '/user/new' do
+    erb :'user/new'
+  end 
  
   get '/spaces' do
     @spaces = Spaces.all
