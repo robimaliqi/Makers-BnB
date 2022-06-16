@@ -36,4 +36,16 @@ feature "Create listing page" do
     click_button("List my space")
     expect(page).to have_content("beautiful relaxing space")
   end
+
+  scenario "user can add a price to listing" do
+    visit("/")
+    click_button("View Spaces")
+    click_button("List a Space")
+    expect(page).to have_current_path("/spaces/new")
+    fill_in("name", with: "Space_1")
+    fill_in("description", with: "beautiful relaxing space")
+    fill_in("price", with: 100)
+    click_button("List my space")
+    expect(page).to have_content("100")
+  end
 end

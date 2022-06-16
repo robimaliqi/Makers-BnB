@@ -3,9 +3,9 @@ require 'spaces'
 RSpec.describe Spaces do
   describe ".all method" do
     it "returns all spaces" do
-      space_1 = Spaces.create(name: "Space_1", description: "beautiful, relaxing space")
-      space_2 = Spaces.create(name: "Space_2", description: "beautiful, relaxing space")
-      space_3 = Spaces.create(name: "Space_3", description: "beautiful, relaxing space")
+      space_1 = Spaces.create(name: "Space_1", description: "beautiful, relaxing space", price: "100")
+      space_2 = Spaces.create(name: "Space_2", description: "beautiful, relaxing space", price: "100")
+      space_3 = Spaces.create(name: "Space_3", description: "beautiful, relaxing space", price: "100")
 
       spaces = Spaces.all
 
@@ -16,9 +16,9 @@ RSpec.describe Spaces do
 
   describe ".book method" do
     it "changes the space to no longer be available" do
-      space_1 = Spaces.create(name: "Space_1", description: "beautiful, relaxing space")
-      space_2 = Spaces.create(name: "Space_2", description: "beautiful, relaxing space")
-      space_3 = Spaces.create(name: "Space_3", description: "beautiful, relaxing space")
+      space_1 = Spaces.create(name: "Space_1", description: "beautiful, relaxing space", price: "100")
+      space_2 = Spaces.create(name: "Space_2", description: "beautiful, relaxing space", price: "100")
+      space_3 = Spaces.create(name: "Space_3", description: "beautiful, relaxing space", price: "100")
 
       Spaces.book(id: space_1.id)
       spaces = Spaces.all
@@ -29,7 +29,7 @@ RSpec.describe Spaces do
 
   describe ".create method" do
     it "creates a new instance of a space with name and description" do
-      space_1 = Spaces.create(name: "Space_1", description: "beautiful, relaxing space")
+      space_1 = Spaces.create(name: "Space_1", description: "beautiful, relaxing space", price: "100")
 
       spaces = Spaces.all
 
