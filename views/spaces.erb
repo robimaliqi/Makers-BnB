@@ -83,6 +83,8 @@ button[type=submit]{
   </div>
     <%= space.description %>  
     £<%= space.price %>
+    <%= space.available_from %>
+    <%= space.available_to %>
     <form action="/spaces/<%= space.id %>" method="post">
       <button type="book">Book</button>
       </form>

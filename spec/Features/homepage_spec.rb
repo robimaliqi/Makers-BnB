@@ -8,8 +8,7 @@ end
 
 feature "click through to spaces page" do
   scenario "user clicks button to view spaces" do
-    visit('/')
-    click_button('View Spaces')
+    register_and_login
     expect(current_path).to eq ('/spaces')
   end
 end
