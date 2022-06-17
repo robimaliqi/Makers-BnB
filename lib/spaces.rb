@@ -47,8 +47,8 @@ class Spaces
         description: space["description"],
         price: space["price"],
         available: space["available"],
-        available_from: space["available_from"],
-        available_to: space["available_to"],
+        available_from: Date.parse(space["available_from"]).strftime('%d/%m/%Y'),
+        available_to: Date.parse(space["available_to"]).strftime('%d/%m/%Y'),
       )
     end
   end
