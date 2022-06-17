@@ -53,7 +53,7 @@ class MakersBnB < Sinatra::Base
     redirect '/spaces'
   end
 
-  post '/sessions/end' do
+  get '/sessions/end' do
     session.clear
     redirect '/'
   end
