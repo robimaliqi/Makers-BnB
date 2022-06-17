@@ -13,13 +13,13 @@ class MakersBnB < Sinatra::Base
     erb :index
   end
 
-  post '/user' do
+  post '/user/new' do
     User.create(email: params[:email], password: params[:password])
-    redirect '/user/new'
+    redirect '/sessions/new'
   end
 
-  get '/user/new' do
-    erb :'user/new'
+  get '/sessions/new' do
+    erb :'sessions/new'
   end
 
   get '/spaces' do
