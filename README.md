@@ -96,12 +96,12 @@ $ bundle install
 # Set up database
 $ psql
 $ CREATE DATABASE makersbnb;
-$ \c makers_bnb;
+$ \c makersbnb;
 # Run the commands in the db/migrations folder, in order.
 
 $ psql
 $ CREATE DATABASE makersbnb_test;
-$ \c makers_bnb_test;
+$ \c makersbnb_test;
 # Run the commands in the db/migrations folder, in order.
 
 # Run the project
@@ -116,10 +116,8 @@ $ bundle exec rspec
 ## :memo: Authors
 
 Made with :heart: by :
-<a href="https://github.com/robimaliqi" target="_blank">Robi Maliqi</a>
-<a href="https://github.com/davekempsell" target="_blank">Dave Kempsell</a>
-<a href="https://github.com/MalikOJBS" target="_blank">Osman Saeed</a>
-<a href="https://github.com/danielotf" target="_blank">Daniel Mbata</a>
+
+-<a href="https://github.com/robimaliqi" target="_blank">Robi Maliqi</a><br> -<a href="https://github.com/davekempsell" target="_blank">Dave Kempsell</a><br> -<a href="https://github.com/MalikOJBS" target="_blank">Osman Saeed</a><br> -<a href="https://github.com/danielotf" target="_blank">Daniel Mbata</a><br>
 
 &#xa0;
 
