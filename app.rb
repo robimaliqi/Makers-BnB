@@ -34,7 +34,7 @@ class MakersBnB < Sinatra::Base
       redirect '/spaces'
     else
       flash[:notice] = 'Please check your email or password'
-      redirect('/sessions/new')
+      redirect '/sessions/new'
     end
   end
 
@@ -55,11 +55,11 @@ class MakersBnB < Sinatra::Base
   post '/spaces/new/create' do
     Spaces.create(
       name: params[:name],
-       description: params[:description],
-        price: params[:price],
-         available_from: params[:available_from],
-          available_to: params[:available_to]
-          )
+      description: params[:description],
+      price: params[:price],
+      available_from: params[:available_from],
+      available_to: params[:available_to]
+    )
     redirect '/spaces'
   end
 
