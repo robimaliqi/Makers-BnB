@@ -1,18 +1,16 @@
-# frozen_string_literal: true
-
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 # gem "rails"
 
 ruby '3.0.2'
 
-gem 'sinatra'
-gem 'sinatra-reloader'
-gem 'sinatra-flash'
-gem 'sinatra-contrib'
-gem 'webrick'
-gem 'pg'
 gem 'bcrypt'
+gem 'pg'
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'sinatra-flash'
+gem 'sinatra-reloader'
+gem 'webrick'
 
 group :test do
   gem 'capybara'
@@ -24,4 +22,3 @@ end
 group :development, :test do
   gem 'rubocop', '1.20'
 end
-
