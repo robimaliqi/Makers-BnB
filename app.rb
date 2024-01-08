@@ -16,15 +16,15 @@ class MakersBnB < Sinatra::Base
   post '/user/new' do
     User.create(email: params[:email], password: params[:password])
     redirect '/sessions/new'
-  end 
+  end
 
   get '/sessions/new' do
     erb :'sessions/new'
-  end 
+  end
 
   post '/sessions' do
     user = User.authenticate(email: params[:email], password: params[:password])
-    
+
     if user
       session[:user_id] = user.id
       redirect '/spaces'
@@ -33,7 +33,7 @@ class MakersBnB < Sinatra::Base
       redirect('/sessions/new')
     end
   end
- 
+
   get '/spaces' do
     @spaces = Spaces.all
     erb :spaces
@@ -60,5 +60,3 @@ class MakersBnB < Sinatra::Base
 
   run! if app_file == $0
 end
-
-# comment something
