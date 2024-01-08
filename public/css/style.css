@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: white;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: black;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+
+button,
+button[type="book"],
+button[type="submit"] {
+  background-color: black;
+  color: white;
+  padding: 8px 10px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  align-items: center;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.spaces-container {
+  padding-left: 400px;
+  margin-right: 450px;
+  border: 5px outset black;
+  padding-left: 170px;
+}
+
+.spaces {
+  padding-top: 10px;
+}
+
+.list-space-btn {
+  padding-top: 20px;
+  padding-left: 110px;
+}
+
+form {
+  text-align: center;
+  align-items: center;
+}
+
+form input[type="email"],
+form input[type="password"] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px auto;
+  display: block;
+  border: 1px solid #ccc;
+  text-align: center;
+  align-items: center;
+}
+
+.imgcontainer {
+  text-align: center;
+  align-items: center;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 60%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-text {
+  text-align: center;
+}
