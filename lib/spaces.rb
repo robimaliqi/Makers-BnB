@@ -4,7 +4,7 @@ require_relative 'database_connection'
 class Spaces
   attr_reader :id, :name, :description, :price, :available, :available_from, :available_to
 
-  def initialize( id:, name:, description:, price:, available:, available_from:, available_to:)
+  def initialize(id:, name:, description:, price:, available:, available_from:, available_to:)
     @name = name
     @id = id
     @description = description
@@ -34,6 +34,7 @@ class Spaces
     spaces = DatabaseConnection.query(
       "UPDATE spaces SET available=FALSE WHERE id=$1 
       RETURNING id, name, description, price, available, available_from, available_to; ",
+
       [id]
     )
   end

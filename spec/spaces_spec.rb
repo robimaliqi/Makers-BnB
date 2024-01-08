@@ -9,8 +9,8 @@ RSpec.describe Spaces do
 
       spaces = Spaces.all
 
-      expect(spaces.first.name).to eq ("Space_1")
-      expect(spaces.last.name).to eq ("Space_3")
+      expect(spaces.first.name).to eq('Space_1')
+      expect(spaces.last.name).to eq('Space_3')
     end
   end
 
@@ -23,7 +23,7 @@ RSpec.describe Spaces do
       Spaces.book(id: space_1.id)
       spaces = Spaces.all
 
-      expect(spaces.first.name).to eq ("Space_2")
+      expect(spaces.first.name).to eq('Space_2')
     end
   end
 
@@ -33,8 +33,8 @@ RSpec.describe Spaces do
 
       spaces = Spaces.all
 
-      expect(spaces.first.name).to eq ("Space_1")
-      expect(spaces.first.description).to eq ("beautiful, relaxing space")
+      expect(spaces.first.name).to eq('Space_1')
+      expect(spaces.first.description).to eq('beautiful, relaxing space')
     end
   end
-end     
+end

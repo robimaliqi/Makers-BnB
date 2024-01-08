@@ -3,41 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
-  <title>MakersBnB - Log in</title>
+  <link rel="stylesheet" href="css/style.css">
+  <title>MakersBnB</title>
 </head>
 <body>
 
-<div class="topnav">
+<header class="topnav">
   <a href="/">Home</a>
   <div class="topnav-right">
     <a href="/sessions/new">Log in</a>
   </div>
-</div>
+</header>
 
-<div>
-  <h2>Log in to MakersBnB</h2>
-</div>
+<main class="container">
+  <h2 class="centered-text">Welcome to MakersBnB <br>Feel at home, anywhere</h2>
+</main>
 
-<div class="imgcontainer">
+<div class="img-container">
   <a href="/"><img src="https://i.ibb.co/YBHKrB4/makers-bnb-logo.png" alt="MakersBnB Logo"></a>
 </div>
 
-<div>
-  <form action="/sessions" method="post">
+<section>
+  <form action="/user/new" method="post">
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" placeholder="Email" />
+    <input type="email" id="email" name="email" placeholder="email" />
     
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" placeholder="Password" />
     
-    <button type="submit">Log in</button>
+    <button type="submit">Sign Up</button>
   </form>
-</div>
-
-<h2>
-  <%= flash[:notice] %>
-</h2>
+</section>
 
 </body>
 </html>

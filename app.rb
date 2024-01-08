@@ -3,28 +3,32 @@ require 'sinatra/reloader'
 require 'sinatra/flash'
 require './lib/spaces'
 require './database_connection_setup'
-require_relative 'lib/user'
+require_relative './lib/user'
 
 class MakersBnB < Sinatra::Base
+  configure :development do
+    register Sinatra::Reloader
+    register Sinatra::Flash
+  end
+
   enable :sessions
-  register Sinatra::Flash
 
   get '/' do
-    erb :index
+    erb :'home/index'
   end
 
   post '/user/new' do
     User.create(email: params[:email], password: params[:password])
     redirect '/sessions/new'
-  end 
+  end
 
   get '/sessions/new' do
     erb :'sessions/new'
-  end 
+  end
 
   post '/sessions' do
     user = User.authenticate(email: params[:email], password: params[:password])
-    
+
     if user
       session[:user_id] = user.id
       redirect '/spaces'
@@ -33,10 +37,10 @@ class MakersBnB < Sinatra::Base
       redirect('/sessions/new')
     end
   end
- 
+
   get '/spaces' do
     @spaces = Spaces.all
-    erb :spaces
+    erb :'spaces/spaces'
   end
 
   post '/spaces/:id' do
@@ -66,5 +70,3 @@ class MakersBnB < Sinatra::Base
 
   run! if app_file == $0
 end
-
-# comment something
