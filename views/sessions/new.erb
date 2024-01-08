@@ -1,115 +1,39 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;}
-
-.topnav {
-  overflow: hidden;
-  background-color: black;
-}
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: centre;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: white;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: black;
-  color: white;
-}
-
-.topnav-right {
-  float: right;
-}
-
-form 
-
-input[type=email] {
-  width: 30%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  margin-left: 500px;
-
-}
-
-input[type=password] {
-  width: 30%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  margin-left: 500px;
-}
-
-button {
-  background-color: black;
-  color: white;
-  padding: 14px 10px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 30%;
-  margin-left: 500px;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 60%;
-}
-
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>MakersBnB - Log in</title>
 </head>
 <body>
 
 <div class="topnav">
   <a href="/">Home</a>
   <div class="topnav-right">
-  <a href="/sessions/new">Log in</a>
+    <a href="/sessions/new">Log in</a>
   </div>
 </div>
 
-
-<div style="padding-left:590px">
-<h2>Log in to MakersBnB</h2>
+<div>
+  <h2>Log in to MakersBnB</h2>
 </div>
-<form action="/sessions" method="post">
-  <div class="imgcontainer">
-    <a href="/"><img src="https://i.ibb.co/YBHKrB4/makers-bnb-logo.png" alt="makers-bnb-logo"></a>
-  </div>
 
-  <div class="container">
-    <input type="email" name="email" placeholder="email"/>
-    <input type="password" name="password" placeholder="password"/>   
+<div class="imgcontainer">
+  <a href="/"><img src="https://i.ibb.co/YBHKrB4/makers-bnb-logo.png" alt="MakersBnB Logo"></a>
+</div>
+
+<div>
+  <form action="/sessions" method="post">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Email" />
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Password" />
+    
     <button type="submit">Log in</button>
-    <label>
-  </div>
-</form>
+  </form>
+</div>
 
 <h2>
   <%= flash[:notice] %>
