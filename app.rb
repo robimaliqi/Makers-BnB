@@ -40,7 +40,7 @@ class MakersBnB < Sinatra::Base
 
   get '/spaces' do
     @spaces = Spaces.all
-    erb :spaces
+    erb :'spaces/spaces'
   end
 
   post '/spaces/:id' do
