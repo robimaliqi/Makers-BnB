@@ -6,10 +6,9 @@ feature 'visiting homepage' do
   end
 end
 
-feature 'click through to spaces page' do
-  scenario 'user clicks button to view spaces' do
-    visit('/')
-    click_button('View Spaces')
-    expect(current_path).to eq('/spaces')
+feature "click through to spaces page" do
+  scenario "user clicks button to view spaces" do
+    register_and_login
+    expect(current_path).to eq ('/spaces')
   end
 end

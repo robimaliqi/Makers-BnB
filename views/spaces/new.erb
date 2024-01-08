@@ -92,7 +92,7 @@ input[name="price"]
   <h2>List a Space</h2>
 </div>
 <div style="padding-left:520px;">
-  <p><form action="/spaces/new/create" method="post">
+  <form action="/spaces/new/create" method="post">
   <input type="text" name="name" placeholder="Name"/>
   <br>
   <input type="text" name="description" placeholder="Description of your space"/>
@@ -103,9 +103,14 @@ input[name="price"]
   <input type="text" name="price" placeholder="Amount per night"/>
   <br>
 </div>
+<div style="padding-left:507px; padding-right:15;">
+<input type="date" name="available_from" placeholder="Available from"/>
+  <input type="date" name="available_to" placeholder="Available to"/>
+  <br>
+  </div>
 <div style="padding-left:610px;">
   <button type="submit">List my space</button>
-</form></p>
+</form>
 </div>
 </div>
 

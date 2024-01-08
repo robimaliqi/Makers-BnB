@@ -1,7 +1,10 @@
 feature 'Create listing page' do
-  scenario 'User can create a new listing' do
+  before do
     visit('/')
     click_button('View Spaces')
+  end
+
+  scenario 'User can create a new listing' do
     click_button('List a Space')
     expect(page).to have_current_path('/spaces/new')
     fill_in('name', with: 'Space_1')
@@ -11,8 +14,6 @@ feature 'Create listing page' do
   end
 
   scenario 'User can create multiple listings' do
-    visit('/')
-    click_button('View Spaces')
     click_button('List a Space')
     expect(page).to have_current_path('/spaces/new')
     fill_in('name', with: 'Space_1')
@@ -26,9 +27,7 @@ feature 'Create listing page' do
     expect(page).to have_content('Space_2')
   end
 
-  scenario 'user can add description to listing' do
-    visit('/')
-    click_button('View Spaces')
+  scenario 'User can add description to listing' do
     click_button('List a Space')
     expect(page).to have_current_path('/spaces/new')
     fill_in('name', with: 'Space_1')
@@ -37,9 +36,7 @@ feature 'Create listing page' do
     expect(page).to have_content('beautiful relaxing space')
   end
 
-  scenario 'user can add a price to listing' do
-    visit('/')
-    click_button('View Spaces')
+  scenario 'User can add a price to listing' do
     click_button('List a Space')
     expect(page).to have_current_path('/spaces/new')
     fill_in('name', with: 'Space_1')

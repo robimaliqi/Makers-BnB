@@ -16,6 +16,7 @@ require 'simplecov-console'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'web_helper'
 
 Capybara.app = MakersBnB
 
