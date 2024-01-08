@@ -3,14 +3,18 @@ require 'sinatra/reloader'
 require 'sinatra/flash'
 require './lib/spaces'
 require './database_connection_setup'
-require_relative 'lib/user'
+require_relative './lib/user'
 
 class MakersBnB < Sinatra::Base
+  configure :development do
+    register Sinatra::Reloader
+    register Sinatra::Flash
+  end
+
   enable :sessions
-  register Sinatra::Flash
 
   get '/' do
-    erb :index
+    erb :'home/index'
   end
 
   post '/user/new' do
