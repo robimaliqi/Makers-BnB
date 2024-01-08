@@ -95,12 +95,12 @@ $ bundle install
 
 # Set up database
 $ psql
-$ CREATE DATABASE makers_bnb;
+$ CREATE DATABASE makersbnb;
 $ \c makers_bnb;
 # Run the commands in the db/migrations folder, in order.
 
 $ psql
-$ CREATE DATABASE makers_bnb_test;
+$ CREATE DATABASE makersbnb_test;
 $ \c makers_bnb_test;
 # Run the commands in the db/migrations folder, in order.
 
