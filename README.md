@@ -68,6 +68,7 @@ We developed a user-friendly web app for accommodation rentals. Users can log in
 - Add a upload image so user can show an image of thier space.
 - Add a date booking API to show when spaces are available.
 - Add requests page.
+- Use Rake to migrate database instead.
 
 ## :rocket: Technologies
 
